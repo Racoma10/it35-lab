@@ -18,11 +18,12 @@ import {homeOutline, logOutOutline, rocketOutline} from 'ionicons/icons';
 import { Redirect, Route } from 'react-router';
 import Home from './Home';
 import About from './About';
+import Details from './Details';
 
 const Menu: React.FC = () => {
   const path = [
-      {name:'Home', url: '/it35-lab/app/Home', icon: homeOutline},
-      {name:'About', url: '/it35-lab/app/About', icon: rocketOutline},
+      {name:'Home', url: '/it35-lab/app/home', icon: homeOutline},
+      {name:'About', url: '/it35-lab/app/about', icon: rocketOutline},
   ]
 
   return (
@@ -56,14 +57,15 @@ const Menu: React.FC = () => {
               </IonMenu>
               
               <IonRouterOutlet id="main">
-                  <Route exact path="/it35-lab/app/Home" component={Home} />
-                  <Route exact path="/it35-lab/app/About" component={About} />
+                  <Route exact path="/it35-lab/app/home" component={Home} />
+                  <Route exact path="/it35-lab/app/home/details" component={Details} />
+                  <Route exact path="/it35-lab/app/about" component={About} />
 
                   <Route exact path="/it35-lab/app">
-                      <Redirect to="/it35-lab/app/Home"/>
+                      <Redirect to="/it35-lab/app/home"/>
                   </Route>
               </IonRouterOutlet>
-              
+
           </IonSplitPane>
       </IonPage>
   );
