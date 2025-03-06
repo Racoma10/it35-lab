@@ -4,6 +4,7 @@ import {
       IonHeader, 
       IonMenuButton, 
       IonPage, 
+      IonSearchbar, 
       IonTitle, 
       IonToolbar 
   } from '@ionic/react';
@@ -18,8 +19,10 @@ import {
             </IonButtons>
             <IonTitle>Search</IonTitle>
           </IonToolbar>
+          <IonSearchbar color="primary" placeholder="Search here !"></IonSearchbar>
         </IonHeader>
         <IonContent fullscreen>
+
           <div
             style={{
               display: 'flex',
