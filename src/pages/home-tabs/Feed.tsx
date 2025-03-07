@@ -1,5 +1,10 @@
 import { 
     IonButtons,
+      IonCard,
+      IonCardContent,
+      IonCardHeader,
+      IonCardSubtitle,
+      IonCardTitle,
       IonContent, 
       IonHeader, 
       IonMenuButton, 
@@ -20,6 +25,15 @@ import {
           </IonToolbar>
         </IonHeader>
         <IonContent fullscreen>
+        <IonCard>
+      <img alt="Silhouette of mountains" src="https://i.ytimg.com/vi/8dr7YK3wLQ8/maxresdefault.jpg" />
+      <IonCardHeader>
+        <IonCardTitle>VP SARAH DUTERTE EMPEACHMENT</IonCardTitle>
+      </IonCardHeader>
+
+      <IonCardContent>In December 2024, four impeachment complaints were formally filed against Sara Duterte, the vice president of the Philippines, serving under President Bongbong Marcos.</IonCardContent>
+    </IonCard>
+
           <div
             style={{
               display: 'flex',
