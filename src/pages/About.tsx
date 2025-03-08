@@ -10,16 +10,16 @@ import {
   IonMenuButton, 
   IonPage, 
   IonTitle, 
-  IonToolbar 
+  IonToolbar
 } from '@ionic/react';
 
-import { personCircleOutline, codeSlashOutline, mailOutline, logoGithub } from 'ionicons/icons';
+import { personCircleOutline, codeSlashOutline, mailOutline } from 'ionicons/icons';
 
 const About: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar color="primary">
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
@@ -27,12 +27,12 @@ const About: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen className="ion-padding">
+      <IonContent fullscreen className="ion-padding" style={{ backgroundColor: '#f4f4f4' }}>
         {/* Profile Section */}
-        <IonCard className="ion-text-center">
+        <IonCard className="ion-text-center" style={{ marginBottom: '20px' }}>
           <IonCardHeader>
-            <IonIcon icon={personCircleOutline} style={{ fontSize: '80px', color: '#3880ff' }} />
-            <IonCardTitle>RipMickel</IonCardTitle>
+            <IonIcon icon={personCircleOutline} style={{ fontSize: '80px', color: '#4CAF50' }} />
+            <IonCardTitle>Racoma</IonCardTitle>
             <p>Wanna be App Developer</p>
           </IonCardHeader>
           <IonCardContent>
@@ -43,10 +43,10 @@ const About: React.FC = () => {
         </IonCard>
 
         {/* Skills Section */}
-        <IonCard>
+        <IonCard style={{ marginBottom: '20px' }}>
           <IonCardHeader>
             <IonCardTitle>
-              <IonIcon icon={codeSlashOutline} style={{ marginRight: '8px' }} />
+              <IonIcon icon={codeSlashOutline} style={{ marginRight: '8px', color: '#4CAF50' }} />
               Skills & Technologies
             </IonCardTitle>
           </IonCardHeader>
@@ -61,12 +61,12 @@ const About: React.FC = () => {
         <IonCard>
           <IonCardHeader>
             <IonCardTitle>
-              <IonIcon icon={mailOutline} style={{ marginRight: '8px' }} />
+              <IonIcon icon={mailOutline} style={{ marginRight: '8px', color: '#4CAF50' }} />
               Contact Me
             </IonCardTitle>
           </IonCardHeader>
           <IonCardContent>
-    
+            <p>GitHub: <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github.com/yourusername</a></p>
           </IonCardContent>
         </IonCard>
       </IonContent>
