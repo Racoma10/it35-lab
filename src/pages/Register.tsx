@@ -6,7 +6,6 @@ import {
   IonInput, 
   IonItem, 
   IonList, 
-  IonMenuButton, 
   IonPage, 
   IonTitle, 
   IonToolbar, 
@@ -16,12 +15,13 @@ import {
   IonToast,
   IonGrid,
   IonRow,
-  IonCol
+  IonCol,
+  IonCard,
+  IonCardContent,
 } from '@ionic/react';
 
 const Register: React.FC = () => {
   const navigation = useIonRouter();
-
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -40,7 +40,7 @@ const Register: React.FC = () => {
       return;
     }
 
-    // If everything is valid, navigate to the next page or perform registration logic
+    // Navigate after successful registration
     navigation.push('/Welcome', 'forward', 'replace');
     setToastMessage('Registration successful!');
     setShowToast(true);
@@ -49,61 +49,57 @@ const Register: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <IonButtons slot="start">
-            <IonMenuButton />
-          </IonButtons>
-          <IonTitle>Register</IonTitle>
+        <IonToolbar color="primary">
+          <IonTitle className="ion-text-center">Register</IonTitle>
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen>
-        <IonGrid style={{ height: '100%' }}>
-          <IonRow
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              height: '100%'
-            }}
-          >
-            <IonCol size="12" sizeMd="6" style={{ display: 'flex', justifyContent: 'center' }}>
-              <IonList style={{ width: '100%' }}>
-                <IonItem>
-                  <IonLabel position="floating">User Name</IonLabel>
-                  <IonInput 
-                    value={userName}
-                    onIonChange={e => setUserName(e.detail.value!)}
-                    placeholder="Enter your username"
-                  />
-                </IonItem>
+      <IonContent fullscreen className="ion-padding">
+        <IonGrid className="ion-justify-content-center ion-align-items-center" style={{ height: '100%' }}>
+          <IonRow className="ion-justify-content-center">
+            <IonCol size="12" sizeMd="6" sizeLg="4">
+              <IonCard style={{ padding: '20px', borderRadius: '12px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}>
+                <IonCardContent>
+                  <IonList>
+                    <IonItem>
+                      <IonLabel position="floating">User Name</IonLabel>
+                      <IonInput 
+                        value={userName}
+                        onIonChange={e => setUserName(e.detail.value!)}
+                        placeholder="Enter your username"
+                      />
+                    </IonItem>
 
-                <IonItem>
-                  <IonLabel position="floating">Email</IonLabel>
-                  <IonInput 
-                    type="email"
-                    value={email}
-                    onIonChange={e => setEmail(e.detail.value!)}
-                    placeholder="Enter your email"
-                  />
-                </IonItem>
+                    <IonItem>
+                      <IonLabel position="floating">Email</IonLabel>
+                      <IonInput 
+                        type="email"
+                        value={email}
+                        onIonChange={e => setEmail(e.detail.value!)}
+                        placeholder="Enter your email"
+                      />
+                    </IonItem>
 
-                <IonItem>
-                  <IonLabel position="floating">Password</IonLabel>
-                  <IonInput 
-                    type="password"
-                    value={password}
-                    onIonChange={e => setPassword(e.detail.value!)}
-                    placeholder="Enter your password"
-                  />
-                </IonItem>
+                    <IonItem>
+                      <IonLabel position="floating">Password</IonLabel>
+                      <IonInput 
+                        type="password"
+                        value={password}
+                        onIonChange={e => setPassword(e.detail.value!)}
+                        placeholder="Enter your password"
+                      />
+                    </IonItem>
+                  </IonList>
 
-                <IonItem>
-                  <IonButton expand="full" onClick={handleRegister}>
+                  <IonButton 
+                    expand="full" 
+                    onClick={handleRegister} 
+                    style={{ marginTop: '20px', borderRadius: '8px', fontWeight: 'bold' }}
+                  >
                     Register
                   </IonButton>
-                </IonItem>
-              </IonList>
+                </IonCardContent>
+              </IonCard>
             </IonCol>
           </IonRow>
         </IonGrid>
